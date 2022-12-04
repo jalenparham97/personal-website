@@ -37,10 +37,10 @@ export default function Home() {
         <header className="flex flex-col justify-center h-[92vh] bg-[url('/images/hero-background-light.svg')] dark:bg-[url('/images/hero-background-dark.svg')] bg-cover bg-no-repeat w-full">
           <div className="max-w-7xl mx-auto px-5">
             <div className="uppercase">
-              <h1 className="text-2xl font-bold lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
+              <h1 className="text-2xl md:text-4xl font-bold lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
                 I&apos;m <span className="text-teal-500">Jalen Parham</span>.
               </h1>
-              <h1 className="text-2xl font-bold lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
+              <h1 className="text-2xl font-bold md:text-4xl lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
                 Sofware Developer and part time freelancer.
               </h1>
             </div>
