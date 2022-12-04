@@ -37,14 +37,14 @@ export default function Home() {
         <header className="flex flex-col justify-center h-[92vh] bg-[url('/images/hero-background-light.svg')] dark:bg-[url('/images/hero-background-dark.svg')] bg-cover bg-no-repeat w-full">
           <div className="max-w-7xl mx-auto px-5">
             <div className="uppercase">
-              <h1 className="text-4xl font-bold lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
+              <h1 className="text-3xl font-bold lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
                 I&apos;m <span className="text-teal-500">Jalen Parham</span>.
               </h1>
-              <h1 className="text-4xl font-bold lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
+              <h1 className="text-3xl font-bold lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
                 Sofware Developer and part time freelancer.
               </h1>
             </div>
-            <p className="text-zinc-600 dark:text-zinc-100 tracking-wider !leading-normal max-w-5xl mt-8 text-2xl lg:text-3xl">
+            <p className="text-zinc-600 dark:text-zinc-100 tracking-wider !leading-normal max-w-5xl mt-8 text-xl lg:text-3xl">
               I&apos;m a software developer specializing in building and
               designing exceptional digital web experiences. Currently, I’m
               focused on building accessible, user-friendly products at{' '}
@@ -72,7 +72,7 @@ export default function Home() {
         </header>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 py-40">
+      <div className="max-w-7xl mx-auto px-5 py-20 lg:py-40">
         <h2 className="uppercase text-3xl font-bold lg:text-4xl text-center text-zinc-900 dark:text-white">
           About <span className="text-teal-500">Me</span>
         </h2>
@@ -115,7 +115,7 @@ export default function Home() {
       </div>
 
       <div className="bg-zinc-900 dark:bg-zinc-800">
-        <div className="max-w-7xl mx-auto px-5 py-40">
+        <div className="max-w-7xl mx-auto px-5 py-20 lg:py-40">
           <div className="text-center">
             <h2 className="uppercase text-3xl font-bold lg:text-4xl text-white">
               My <span className="text-teal-500">Services</span>
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 py-40">
+      <div className="max-w-7xl mx-auto px-5 py-20 lg:py-40">
         <h2 className="uppercase text-3xl font-bold lg:text-4xl text-center text-zinc-900 dark:text-white">
           My <span className="text-teal-500">Portfolio</span>
         </h2>
@@ -182,7 +182,7 @@ export default function Home() {
       </div>
 
       <div className="bg-zinc-200 dark:bg-zinc-800">
-        <div className="max-w-7xl mx-auto px-5 py-40">
+        <div className="max-w-7xl mx-auto px-5 py-20 lg:py-40">
           <h2 className="uppercase text-3xl font-bold lg:text-4xl text-center text-zinc-900 dark:text-white">
             Contact <span className="text-teal-500">Me</span>
           </h2>
