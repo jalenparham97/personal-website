@@ -74,7 +74,7 @@ function ModeToggle() {
 
 export function Navbar() {
   return (
-    <div className="sticky top-0 w-full z-10 shadow-md">
+    <div className="sticky top-0 w-full z-10 border-b border-zinc-800">
       <Popover className="relative bg-zinc-900">
         <div
           className="pointer-events-none absolute inset-0 z-10"

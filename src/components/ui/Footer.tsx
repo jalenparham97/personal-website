@@ -25,7 +25,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className=" bg-zinc-900">
+    <footer className=" bg-zinc-900 border-t border-zinc-800">
       <div className="mx-auto max-w-7xl overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
         <h3 className="text-2xl text-white tracking-widest font-semibold text-center">
           <span className="text-teal-500">J</span>P

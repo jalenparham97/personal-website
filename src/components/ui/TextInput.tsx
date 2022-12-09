@@ -33,7 +33,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
         ref={ref}
         placeholder={placeholder}
         className={clsx(
-          'block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm',
+          'block w-full rounded-md border-gray-300 dark:border-zinc-700 dark:text-white shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm',
           classNames?.input
         )}
       />

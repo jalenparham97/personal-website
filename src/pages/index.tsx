@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
@@ -8,6 +9,12 @@ import WebDevelopmentImage from '@/images/web-icon.svg';
 import ContentImage from '@/images/content-icon.svg';
 import { Textarea } from '@/components/ui/Textarea';
 import { IconArrowRight, IconExternalLink, IconSend } from '@tabler/icons';
+import { PageLayout } from '@/components/layouts/PageLayout';
+import { getClient } from '@/lib/sanity/sanity.server';
+import { projectsHomePageQuery } from '@/lib/sanity/queries/project.queries';
+import { Project } from '@/types';
+import { urlForImage } from '@/lib/sanity/helpers';
+import { ProjectCard } from '@/components/ProjectCard';
 
 const services = [
   {
@@ -30,9 +37,15 @@ const services = [
   },
 ];
 
-export default function Home() {
+interface Props {
+  projects: Project[];
+}
+
+export default function Home({ projects }: Props) {
+  console.log(...services);
+
   return (
-    <div className="">
+    <PageLayout>
       <div className="">
         <header className="flex flex-col justify-center h-[92vh] bg-[url('/images/hero-background-light.svg')] dark:bg-[url('/images/hero-background-dark.svg')] bg-cover bg-no-repeat w-full">
           <div className="max-w-7xl mx-auto px-5">
@@ -88,7 +101,7 @@ export default function Home() {
               Hi, I&apos;m Jalen. Nice to meet you.
             </h3>
             <p className="dark:text-zinc-300 text-xl mt-7 leading-loose">
-              I am currently a Web Developer at{' '}
+              I am currently a Senior Software Developer at{' '}
               <Link
                 href="https://nexient.com"
                 target="_blank"
@@ -150,34 +163,10 @@ export default function Home() {
           My <span className="text-teal-500">Portfolio</span>
         </h2>
 
-        <div className="mt-16">
-          <div className="lg:flex items-center p-7 lg:p-10 bg-zinc-100 dark:bg-zinc-800 shadow-md lg:space-x-10 rounded-md">
-            <Image
-              src="https://images.prismic.io/jalenparham/e29074bf-34f0-4c51-97be-b09186b6b527_Screen+Shot+2021-01-28+at+4.00.10+PM.png?auto=compress,format&rect=0,1,2352,1291&w=3322&h=1824"
-              alt=""
-              width={1000}
-              height={1000}
-              className="w-full md:h-[400px] lg:h-[300px] rounded-md"
-            />
-
-            <div className="w-full mt-8 lg:mt-0">
-              <h2 className="text-3xl font-semibold text-zinc-900 dark:text-white">
-                Beyond Us Firearms Academy
-              </h2>
-              <p className="text-lg leading-normal mt-5 dark:text-zinc-200">
-                Beyond Us Firearms Academy gives class leading firearms training
-                and safety instruction in the metro Detroit, and Tri-state areas
-                in Michigan.
-              </p>
-              <Button
-                href="/portfolio"
-                className="!px-10 !py-3 !text-lg mt-7"
-                leftIcon={<IconExternalLink size={22} />}
-              >
-                Visit website
-              </Button>
-            </div>
-          </div>
+        <div className="mt-16 space-y-10">
+          {projects.map((project) => (
+            <ProjectCard project={project} key={project._id} />
+          ))}
         </div>
       </div>
 
@@ -189,13 +178,19 @@ export default function Home() {
 
           <div className="mt-16 flex lg:space-x-20 flex-col-reverse lg:flex-row">
             <form className="w-full mt-20 lg:mt-0">
-              <TextInput label="Name" />
+              <TextInput
+                label="Name"
+                classNames={{ input: 'dark:bg-zinc-900' }}
+              />
               <TextInput
                 label="Email"
                 type="email"
-                classNames={{ root: 'mt-4' }}
+                classNames={{ root: 'mt-4', input: 'dark:bg-zinc-900' }}
               />
-              <Textarea label="Message" classNames={{ root: 'mt-4' }} />
+              <Textarea
+                label="Message"
+                classNames={{ root: 'mt-4', input: 'dark:bg-zinc-900' }}
+              />
               <Button
                 className="!px-10 !py-3 !text-lg mt-7"
                 leftIcon={<IconSend size={22} />}
@@ -228,6 +223,18 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const projects: Project[] = await getClient(preview).fetch(
+    projectsHomePageQuery
+  );
+
+  return {
+    props: {
+      projects,
+    },
+  };
+};

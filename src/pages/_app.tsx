@@ -9,11 +9,9 @@ const inter = Inter({ subsets: ['latin'] });
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className="">
-      <Navbar />
       <main className={inter.className}>
         <Component {...pageProps} />
       </main>
-      <Footer />
     </div>
   );
 }
