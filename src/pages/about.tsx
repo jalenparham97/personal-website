@@ -85,7 +85,14 @@ interface Props {
 
 export default function AboutPage({ aboutPage }: Props) {
   return (
-    <PageLayout>
+    <PageLayout
+      seo={{
+        title: 'About - Jalen Parham',
+        description:
+          "I'm Jalen Parham, a Software Engineer and Freelance Web Developer.",
+        canonicalUrl: 'https://jalenparham.com/about',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-5 py-20">
         <div>
           <h2 className="uppercase text-3xl font-bold lg:text-4xl text-center text-zinc-900 dark:text-white">

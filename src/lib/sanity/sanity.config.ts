@@ -4,7 +4,7 @@ import { visionTool } from '@sanity/vision';
 import { media } from 'sanity-plugin-media';
 import { projectSchema } from './schemas/project.schema';
 import { aboutSchema } from './schemas/about.schema';
-import { definePagePlugin, myStructure } from './plugins';
+import { myStructure } from './plugins';
 
 export const apiVersion = '2022-12-04';
 
@@ -25,6 +25,5 @@ export const studioConfig = defineConfig({
       defaultApiVersion: apiVersion,
     }),
     media(),
-    // definePagePlugin({ type: aboutSchema.name }),
   ],
 });

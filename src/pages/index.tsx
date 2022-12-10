@@ -8,12 +8,11 @@ import WebDesignImage from '@/images/design-icon.svg';
 import WebDevelopmentImage from '@/images/web-icon.svg';
 import ContentImage from '@/images/content-icon.svg';
 import { Textarea } from '@/components/ui/Textarea';
-import { IconArrowRight, IconExternalLink, IconSend } from '@tabler/icons';
+import { IconArrowRight, IconSend } from '@tabler/icons';
 import { PageLayout } from '@/components/layouts/PageLayout';
 import { getClient } from '@/lib/sanity/sanity.server';
 import { projectsHomePageQuery } from '@/lib/sanity/queries/project.queries';
 import { Project } from '@/types';
-import { urlForImage } from '@/lib/sanity/helpers';
 import { ProjectCard } from '@/components/ProjectCard';
 
 const services = [
@@ -42,10 +41,14 @@ interface Props {
 }
 
 export default function Home({ projects }: Props) {
-  console.log(...services);
-
   return (
-    <PageLayout>
+    <PageLayout
+      seo={{
+        title: 'Jalen Parham',
+        description: 'Sofware Developer and part time freelancer.',
+        canonicalUrl: 'https://jalenparham.com',
+      }}
+    >
       <div className="">
         <header className="flex flex-col justify-center h-[92vh] bg-[url('/images/hero-background-light.svg')] dark:bg-[url('/images/hero-background-dark.svg')] bg-cover bg-no-repeat w-full">
           <div className="max-w-7xl mx-auto px-5">
@@ -228,7 +231,7 @@ export default function Home({ projects }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const projects: Project[] = await getClient(preview).fetch(
+  const projects = await getClient(preview).fetch<Project[]>(
     projectsHomePageQuery
   );
 

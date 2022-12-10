@@ -7,7 +7,13 @@ import { IconSend } from '@tabler/icons';
 
 export default function ContactPage() {
   return (
-    <PageLayout>
+    <PageLayout
+      seo={{
+        title: 'Contact - Jalen Parham',
+        description: 'Dont be a stranger, just say hello.',
+        canonicalUrl: 'https://jalenparham.com/contact',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-5 py-20">
         <div>
           <h2 className="uppercase text-3xl font-bold lg:text-4xl text-center text-zinc-900 dark:text-white">

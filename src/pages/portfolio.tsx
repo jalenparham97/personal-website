@@ -11,7 +11,13 @@ interface Props {
 
 export default function PortfolioPage({ projects }: Props) {
   return (
-    <PageLayout>
+    <PageLayout
+      seo={{
+        title: 'Portfolio - Jalen Parham',
+        description: 'Some of the work I have done.',
+        canonicalUrl: 'https://jalenparham.com/portfolio',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-5 py-20">
         <h2 className="uppercase text-3xl font-bold lg:text-4xl text-center text-zinc-900 dark:text-white">
           My <span className="text-teal-500">Portfolio</span>
