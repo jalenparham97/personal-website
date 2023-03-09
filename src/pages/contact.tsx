@@ -6,6 +6,7 @@ import { TextInput } from '@/components/ui/TextInput';
 import { IconSend } from '@tabler/icons';
 
 export default function ContactPage() {
+  console.log(process.env.NEXT_PUBLIC_FORMBOX_URL);
   return (
     <PageLayout
       seo={{
@@ -45,22 +46,32 @@ export default function ContactPage() {
           <h3 className="text-zinc-900 dark:text-white text-2xl md:text-3xl font-bold text-center">
             Let&apos;s Get In Touch
           </h3>
-          <form className="w-full mt-10">
+          <form
+            className="w-full mt-10"
+            action="https://app.formbox.app/api/forms/6407283a851fdbefcff59e56"
+            method="post"
+          >
+            <input type="hidden" name="_gotcha" />
             <TextInput
               label="Name"
+              name="name"
+              autoComplete="full_name"
               classNames={{ input: 'dark:bg-zinc-800' }}
             />
             <TextInput
               label="Email"
               type="email"
+              name="email"
               classNames={{ root: 'mt-4', input: 'dark:bg-zinc-800' }}
             />
             <Textarea
               label="Message"
+              name="message"
               classNames={{ root: 'mt-4', input: 'dark:bg-zinc-800' }}
             />
             <div className="mt-7">
               <Button
+                type="submit"
                 className="!px-10 !py-3 !text-lg"
                 leftIcon={<IconSend size={22} />}
               >

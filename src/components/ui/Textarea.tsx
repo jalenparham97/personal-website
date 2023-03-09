@@ -7,11 +7,19 @@ interface Props {
   id?: string;
   classNames?: { input?: string; label?: string; root?: string };
   rows?: number;
+  name?: string;
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
   function Textarea(
-    { label = '', placeholder = '', id = '', classNames, rows = 3 }: Props,
+    {
+      label = '',
+      placeholder = '',
+      id = '',
+      name = '',
+      classNames,
+      rows = 3,
+    }: Props,
     ref
   ) {
     return (
@@ -28,8 +36,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
           </label>
         )}
         <textarea
-          name={id}
           id={id}
+          name={name}
           rows={rows}
           ref={ref}
           placeholder={placeholder}

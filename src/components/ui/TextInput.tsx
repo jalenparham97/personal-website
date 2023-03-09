@@ -5,12 +5,22 @@ interface Props {
   label?: string;
   placeholder?: string;
   id?: string;
+  name?: string;
   classNames?: { input?: string; label?: string; root?: string };
   type?: HTMLInputTypeAttribute;
+  [x: string]: any;
 }
 
 export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
-  { label = '', placeholder = '', id = '', classNames, type = 'text' }: Props,
+  {
+    label = '',
+    placeholder = '',
+    id = '',
+    classNames,
+    name = '',
+    type = 'text',
+    ...otherProps
+  }: Props,
   ref
 ) {
   return (
@@ -28,7 +38,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
       )}
       <input
         type={type}
-        name={id}
+        name={name}
         id={id}
         ref={ref}
         placeholder={placeholder}
@@ -36,6 +46,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
           'block w-full rounded-md border-gray-300 dark:border-zinc-700 dark:text-white shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm',
           classNames?.input
         )}
+        {...otherProps}
       />
     </div>
   );

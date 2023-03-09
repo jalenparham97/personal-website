@@ -180,18 +180,27 @@ export default function Home({ projects }: Props) {
           </h2>
 
           <div className="mt-16 flex lg:space-x-20 flex-col-reverse lg:flex-row">
-            <form className="w-full mt-20 lg:mt-0">
+            <form
+              className="w-full mt-20 lg:mt-0"
+              action="https://app.formbox.app/api/forms/6407283a851fdbefcff59e56"
+              method="POST"
+            >
+              <input type="hidden" name="_gotcha" />
               <TextInput
                 label="Name"
+                name="name"
+                autoComplete="full_name"
                 classNames={{ input: 'dark:bg-zinc-900' }}
               />
               <TextInput
                 label="Email"
                 type="email"
+                name="email"
                 classNames={{ root: 'mt-4', input: 'dark:bg-zinc-900' }}
               />
               <Textarea
                 label="Message"
+                name="message"
                 classNames={{ root: 'mt-4', input: 'dark:bg-zinc-900' }}
               />
               <Button
