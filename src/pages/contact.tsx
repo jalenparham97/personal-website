@@ -6,7 +6,6 @@ import { TextInput } from '@/components/ui/TextInput';
 import { IconSend } from '@tabler/icons';
 
 export default function ContactPage() {
-  console.log(process.env.NEXT_PUBLIC_FORMBOX_URL);
   return (
     <PageLayout
       seo={{
@@ -48,7 +47,7 @@ export default function ContactPage() {
           </h3>
           <form
             className="w-full mt-10"
-            action="https://app.formbox.app/api/forms/6407283a851fdbefcff59e56"
+            action={process.env.NEXT_PUBLIC_FORMBOX_URL}
             method="post"
           >
             <input type="hidden" name="_gotcha" />

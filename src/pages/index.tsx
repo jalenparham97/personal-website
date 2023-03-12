@@ -182,7 +182,7 @@ export default function Home({ projects }: Props) {
           <div className="mt-16 flex lg:space-x-20 flex-col-reverse lg:flex-row">
             <form
               className="w-full mt-20 lg:mt-0"
-              action="https://app.formbox.app/api/forms/6407283a851fdbefcff59e56"
+              action={process.env.NEXT_PUBLIC_FORMBOX_URL}
               method="POST"
             >
               <input type="hidden" name="_gotcha" />
