@@ -190,17 +190,20 @@ export default function Home({ projects }: Props) {
                 label="Name"
                 name="name"
                 autoComplete="full_name"
+                required
                 classNames={{ input: 'dark:bg-zinc-900' }}
               />
               <TextInput
                 label="Email"
                 type="email"
                 name="email"
+                required
                 classNames={{ root: 'mt-4', input: 'dark:bg-zinc-900' }}
               />
               <Textarea
                 label="Message"
                 name="message"
+                required
                 classNames={{ root: 'mt-4', input: 'dark:bg-zinc-900' }}
               />
               <Button

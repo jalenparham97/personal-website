@@ -56,16 +56,19 @@ export default function ContactPage() {
               name="name"
               autoComplete="full_name"
               classNames={{ input: 'dark:bg-zinc-800' }}
+              required
             />
             <TextInput
               label="Email"
               type="email"
               name="email"
+              required
               classNames={{ root: 'mt-4', input: 'dark:bg-zinc-800' }}
             />
             <Textarea
               label="Message"
               name="message"
+              required
               classNames={{ root: 'mt-4', input: 'dark:bg-zinc-800' }}
             />
             <div className="mt-7">

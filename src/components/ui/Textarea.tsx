@@ -8,6 +8,7 @@ interface Props {
   classNames?: { input?: string; label?: string; root?: string };
   rows?: number;
   name?: string;
+  [x: string]: any;
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
@@ -19,6 +20,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
       name = '',
       classNames,
       rows = 3,
+      ...otherProps
     }: Props,
     ref
   ) {
@@ -45,6 +47,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
             'block w-full rounded-md border-gray-300 dark:border-zinc-700 dark:text-white shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm',
             classNames?.input
           )}
+          {...otherProps}
         />
       </div>
     );
