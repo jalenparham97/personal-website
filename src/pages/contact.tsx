@@ -1,11 +1,29 @@
 import Link from 'next/link';
+import Script from 'next/script';
 import { PageLayout } from '@/components/layouts/PageLayout';
 import { Button } from '@/components/ui/Button';
 import { Textarea } from '@/components/ui/Textarea';
 import { TextInput } from '@/components/ui/TextInput';
 import { IconSend } from '@tabler/icons';
+import { useEffect } from 'react';
+import { env } from '@/env';
 
 export default function ContactPage() {
+  useEffect(() => {
+    window?.grecaptcha?.ready(function () {
+      window?.grecaptcha
+        ?.execute(env.NEXT_PUBLIC_RECAPTCHA_CLIENT_SECRET, {
+          action: 'contactpage',
+        })
+        .then(function (token: string) {
+          const gcaptchaInput = document.getElementById(
+            'captchaResponse'
+          ) as HTMLInputElement;
+          gcaptchaInput.value = token;
+        });
+    });
+  }, []);
+
   return (
     <PageLayout
       seo={{
@@ -50,7 +68,6 @@ export default function ContactPage() {
             action={process.env.NEXT_PUBLIC_FORMBOX_URL}
             method="post"
           >
-            <input type="hidden" name="_gotcha" />
             <TextInput
               label="Name"
               name="name"
@@ -71,6 +88,12 @@ export default function ContactPage() {
               required
               classNames={{ root: 'mt-4', input: 'dark:bg-zinc-800' }}
             />
+            <input
+              type="hidden"
+              id="captchaResponse"
+              name="g-recaptcha-response"
+            />
+            <input type="hidden" name="_gotcha" />
             <div className="mt-7">
               <Button
                 type="submit"
@@ -85,4 +108,7 @@ export default function ContactPage() {
       </div>
     </PageLayout>
   );
+}
+function ready() {
+  throw new Error('Function not implemented.');
 }

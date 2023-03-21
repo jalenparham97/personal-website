@@ -14,6 +14,8 @@ import { getClient } from '@/lib/sanity/sanity.server';
 import { projectsHomePageQuery } from '@/lib/sanity/queries/project.queries';
 import { Project } from '@/types';
 import { ProjectCard } from '@/components/ProjectCard';
+import { useEffect } from 'react';
+import { env } from '@/env';
 
 const services = [
   {
@@ -41,6 +43,21 @@ interface Props {
 }
 
 export default function Home({ projects }: Props) {
+  useEffect(() => {
+    window?.grecaptcha?.ready(function () {
+      window?.grecaptcha
+        ?.execute(env.NEXT_PUBLIC_RECAPTCHA_CLIENT_SECRET, {
+          action: 'homepage',
+        })
+        .then(function (token: string) {
+          const gcaptchaInput = document.getElementById(
+            'captchaResponse'
+          ) as HTMLInputElement;
+          gcaptchaInput.value = token;
+        });
+    });
+  }, []);
+
   return (
     <PageLayout
       seo={{
@@ -185,7 +202,6 @@ export default function Home({ projects }: Props) {
               action={process.env.NEXT_PUBLIC_FORMBOX_URL}
               method="POST"
             >
-              <input type="hidden" name="_gotcha" />
               <TextInput
                 label="Name"
                 name="name"
@@ -206,6 +222,12 @@ export default function Home({ projects }: Props) {
                 required
                 classNames={{ root: 'mt-4', input: 'dark:bg-zinc-900' }}
               />
+              <input
+                type="hidden"
+                id="captchaResponse"
+                name="g-recaptcha-response"
+              />
+              <input type="hidden" name="_gotcha" />
               <Button
                 className="!px-10 !py-3 !text-lg mt-7"
                 leftIcon={<IconSend size={22} />}

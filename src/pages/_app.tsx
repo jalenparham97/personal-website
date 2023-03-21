@@ -31,6 +31,11 @@ export default function App({ Component, pageProps }: AppProps) {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+
+        <script
+          async
+          src={`https://www.google.com/recaptcha/api.js?render=6LegkBolAAAAAEheE1xJs7wPYOpV40ab8zbyGWfc`}
+        ></script>
       </Head>
 
       <main className={inter.className}>
