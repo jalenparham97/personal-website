@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Script from 'next/script';
 import { PageLayout } from '@/components/layouts/PageLayout';
 import { Button } from '@/components/ui/Button';
 import { Textarea } from '@/components/ui/Textarea';
@@ -13,7 +12,7 @@ export default function ContactPage() {
     window?.grecaptcha?.ready(function () {
       window?.grecaptcha
         ?.execute(env.NEXT_PUBLIC_RECAPTCHA_CLIENT_SECRET, {
-          action: 'contactpage',
+          action: 'contactpage_submit',
         })
         .then(function (token: string) {
           const gcaptchaInput = document.getElementById(
@@ -64,8 +63,9 @@ export default function ContactPage() {
             Let&apos;s Get In Touch
           </h3>
           <form
-            className="w-full mt-10"
             action={process.env.NEXT_PUBLIC_FORMBOX_URL}
+            className="w-full mt-10"
+            id="contact-form"
             method="post"
           >
             <TextInput
@@ -108,7 +108,4 @@ export default function ContactPage() {
       </div>
     </PageLayout>
   );
-}
-function ready() {
-  throw new Error('Function not implemented.');
 }

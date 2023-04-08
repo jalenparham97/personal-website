@@ -47,7 +47,7 @@ export default function Home({ projects }: Props) {
     window?.grecaptcha?.ready(function () {
       window?.grecaptcha
         ?.execute(env.NEXT_PUBLIC_RECAPTCHA_CLIENT_SECRET, {
-          action: 'homepage',
+          action: 'homepage_submit',
         })
         .then(function (token: string) {
           const gcaptchaInput = document.getElementById(
