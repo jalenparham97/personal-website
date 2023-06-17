@@ -82,12 +82,12 @@ export default function Home({ projects }: Props) {
               designing exceptional digital web experiences. Currently, I’m
               focused on building accessible, user-friendly products at{' '}
               <Link
-                href="http://nexient.com"
+                href="https://launch.nttdata.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-500 hover:underline underline-offset-4 decoration-2 decoration-dotted"
               >
-                Nexient
+                Launch
               </Link>
               .
             </p>
@@ -123,12 +123,12 @@ export default function Home({ projects }: Props) {
             <p className="dark:text-zinc-300 text-xl mt-7 leading-loose">
               I am currently a Senior Software Developer at{' '}
               <Link
-                href="https://nexient.com"
+                href="https://launch.nttdata.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-500 hover:underline underline-offset-4 decoration-2 decoration-dotted"
               >
-                Nexient
+                Launch
               </Link>{' '}
               in Ann Arbor, MI. I have a passion for creating beautiful,
               intuitive, and dynamic websites and applications with stunning,
