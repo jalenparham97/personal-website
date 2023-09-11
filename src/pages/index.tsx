@@ -62,6 +62,8 @@ export default function Home({ projects }: Props) {
     <PageLayout
       seo={{
         title: 'Jalen Parham',
+        image:
+          'https://cdn.sanity.io/images/ql9vikpe/production/81fac6b8f72cfb41ec78d5f3df752374a1e5cd2b-3434x1780.webp?fit=max&w=1200&h=1200',
         description: 'Sofware Developer and part time freelancer.',
         canonicalUrl: 'https://jalenparham.com',
       }}
