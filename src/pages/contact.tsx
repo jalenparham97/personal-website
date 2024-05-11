@@ -64,6 +64,7 @@ export default function ContactPage() {
           </h3>
           <form
             action={process.env.NEXT_PUBLIC_FORMBOX_URL}
+            encType="multipart/form-data"
             className="w-full mt-10"
             id="contact-form"
             method="post"
