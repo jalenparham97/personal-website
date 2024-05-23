@@ -12,7 +12,7 @@ interface Props {
 export function ProjectCard({ project }: Props) {
   return (
     <div
-      className="lg:flex items-center p-7 bg-zinc-100 dark:bg-zinc-800 shadow-md lg:space-x-10 rounded-md"
+      className="lg:flex items-center p-7 lg:p-10 bg-zinc-100 dark:bg-zinc-800 shadow-lg lg:space-x-10 rounded-lg border border-zinc-600"
       key={project._id}
     >
       <Image

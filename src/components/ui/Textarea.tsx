@@ -25,7 +25,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
     ref
   ) {
     return (
-      <div className={clsx('space-y-1', classNames?.root)}>
+      <div className={clsx('space-y-2', classNames?.root)}>
         {label && (
           <label
             htmlFor={id}
@@ -44,7 +44,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, Props>(
           ref={ref}
           placeholder={placeholder}
           className={clsx(
-            'block w-full rounded-md border-gray-300 dark:border-zinc-700 dark:text-white shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm',
+            'block w-full rounded-lg border-gray-300 dark:border-zinc-700 dark:text-white shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm',
             classNames?.input
           )}
           {...otherProps}

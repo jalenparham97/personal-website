@@ -76,20 +76,20 @@ export default function Home({ projects }: Props) {
                 I&apos;m <span className="text-teal-500">Jalen Parham</span>.
               </h1>
               <h1 className="text-2xl font-bold md:text-4xl lg:text-5xl text-zinc-900 dark:text-white tracking-wider !leading-snug">
-                Sofware Developer and part time freelancer.
+                Sofware Engineer and Freelance Web Developer.
               </h1>
             </div>
             <p className="text-zinc-600 dark:text-zinc-100 tracking-wider !leading-normal max-w-5xl mt-8 text-xl lg:text-3xl">
               I&apos;m a software developer specializing in building and
               designing exceptional digital web experiences. Currently, I’m
-              focused on building accessible, user-friendly products at{' '}
+              focused on building a SaaS product{' '}
               <Link
-                href="https://launch.nttdata.com"
+                href="https://formbox.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-500 hover:underline underline-offset-4 decoration-2 decoration-dotted"
               >
-                Launch
+                Formbox
               </Link>
               .
             </p>
@@ -123,18 +123,9 @@ export default function Home({ projects }: Props) {
               Hi, I&apos;m Jalen. Nice to meet you.
             </h3>
             <p className="dark:text-zinc-300 text-xl mt-7 leading-loose">
-              I am currently a Senior Software Developer at{' '}
-              <Link
-                href="https://launch.nttdata.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-teal-500 hover:underline underline-offset-4 decoration-2 decoration-dotted"
-              >
-                Launch
-              </Link>{' '}
-              in Ann Arbor, MI. I have a passion for creating beautiful,
-              intuitive, and dynamic websites and applications with stunning,
-              yet functional user experiances.
+              I am a Senior Software Developer in Romulus, MI. I have a passion
+              for creating beautiful, intuitive, and dynamic websites and
+              applications with stunning, yet functional user experiances.
             </p>
             <div className="mt-10">
               <Button
@@ -165,7 +156,7 @@ export default function Home({ projects }: Props) {
             {services.map((service) => (
               <div
                 key={service.name}
-                className="p-8 bg-zinc-800 rounded-md shadow-md text-center dark:bg-zinc-900"
+                className="p-10 bg-zinc-800 rounded-lg shadow-lg text-center dark:bg-zinc-900 border border-zinc-700"
               >
                 <Image src={service.icon} className="w-20 mx-auto" alt="" />
                 <h3 className="text-2xl font-semibold mt-2 text-white">
