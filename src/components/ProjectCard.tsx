@@ -21,6 +21,7 @@ export function ProjectCard({ project }: Props) {
         width={1000}
         height={1000}
         className="w-full md:h-[400px] lg:h-[300px] rounded-md"
+        unoptimized={true}
       />
 
       <div className="w-full mt-8 lg:mt-0">
